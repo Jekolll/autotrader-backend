@@ -14,7 +14,7 @@ app = FastAPI(title="AutoTrader API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://autotrader-frontend-chi.vercel.app"],
+    allow_origins=["https://autotrader-frontend-chi.vercel.app/"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
