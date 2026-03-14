@@ -36,10 +36,7 @@ def login(body: LoginBody):
     conn = MT5Connector(int(body.mt5_login), body.mt5_password, body.mt5_server)
     ok, msg = conn.connect()
     conn.disconnect()
-
-    if not ok:
-        raise HTTPException(400, f"Login MT5 gagal: {msg}")
-
+    
     # Parse info dari msg "OK|balance|currency|server"
     parts   = msg.split("|")
     balance = parts[1] if len(parts) > 1 else "?"
